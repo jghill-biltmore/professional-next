@@ -4,9 +4,9 @@ function CountTitle() {
 
 export default function Count({ number, size }) {
   return (
-    <div>
+    <>
       <CountTitle />
       <p>{number}</p>
-    </div>
+    </>
   );
 }
