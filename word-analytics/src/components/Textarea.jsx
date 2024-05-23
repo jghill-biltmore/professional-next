@@ -1,11 +1,8 @@
 import { useState } from "react";
 import Warning from "./Warning";
 
-export default function Textarea() {
-  const [text, setText] = useState("");
+export default function Textarea({ text, setText }) {
   const [warning, setWarning] = useState("");
-
-  const numberOfCharacters = text.length;
 
   // Basic validation
   const handleChange = (e) => {
