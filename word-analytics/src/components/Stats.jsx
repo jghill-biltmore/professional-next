@@ -9,13 +9,18 @@ function Stat({ label, number = 0 }) {
   );
 }
 
-export default function Stats({ numberOfCharacters }) {
+export default function Stats({
+  numberOfWords,
+  numberOfCharacters,
+  instaCharactersLeft,
+  facebookCharactersLeft,
+}) {
   return (
     <section className="stats">
-      <Stat label="Words" />
+      <Stat label="Words" number={numberOfWords} />
       <Stat label="Characters" number={numberOfCharacters} />
-      <Stat label="Instagram" number={280} />
-      <Stat label="Facebook" number={2200} />
+      <Stat label="Instagram" number={instaCharactersLeft} />
+      <Stat label="Facebook" number={facebookCharactersLeft} />
     </section>
   );
 }
