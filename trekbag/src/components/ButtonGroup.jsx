@@ -1,16 +1,10 @@
 import Button from "./Button";
-
-const buttons = [
-  "Mark all as complete",
-  "Mark all as incomplete",
-  "Reset",
-  "Remove all items",
-];
+import { SIDE_BUTTONS } from "./lib/constants";
 
 export default function ButtonGroup() {
   return (
     <section className="button-group">
-      {buttons.map((btn) => (
+      {SIDE_BUTTONS.map((btn) => (
         <Button key={btn} type="secondary">
           {btn}
         </Button>
