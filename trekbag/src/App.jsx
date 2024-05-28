@@ -9,13 +9,24 @@ import { LIST_ITEMS_INIT } from "./components/lib/constants";
 function App() {
   const [items, setItems] = useState(LIST_ITEMS_INIT);
 
+  const handleAddItem = (itemText) => {
+    const newItem = {
+      id: new Date().getTime(),
+      name: itemText,
+      checked: false,
+    };
+
+    const newItems = [...items, newItem];
+    setItems(newItems);
+  };
+
   return (
     <>
       <BackgroundHeading />
       <main>
         <Header />
         <ItemList items={items} />
-        <Sidebar setItems={setItems} />
+        <Sidebar handleAddItem={handleAddItem} />
       </main>
       <Footer />
     </>
