@@ -1,17 +1,17 @@
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 
-function Item({ item, handleDeleteItem, handleTogglePackedItem }) {
+function Item({ item, onDeleteItem, onTogglePackedItem }) {
   return (
     <li className="item">
       <label>
         <input
           type="checkbox"
           checked={item.checked}
-          onChange={() => handleTogglePackedItem(item.id)}
+          onChange={() => onTogglePackedItem(item.id)}
         />{" "}
         {item.name}
       </label>
-      <button onClick={() => handleDeleteItem(item.id)}>
+      <button onClick={() => onDeleteItem(item.id)}>
         <IoMdRemoveCircleOutline />
       </button>
     </li>
@@ -29,8 +29,8 @@ export default function ItemList({
         <Item
           key={item.id}
           item={item}
-          handleDeleteItem={handleDeleteItem}
-          handleTogglePackedItem={handleTogglePackedItem}
+          onDeleteItem={handleDeleteItem}
+          onTogglePackedItem={handleTogglePackedItem}
         />
       ))}
     </ul>
