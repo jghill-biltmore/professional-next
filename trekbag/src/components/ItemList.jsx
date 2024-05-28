@@ -1,4 +1,5 @@
 import { IoMdRemoveCircleOutline } from "react-icons/io";
+import EmptyView from "./EmptyView";
 
 function Item({ item, onDeleteItem, onTogglePackedItem }) {
   return (
@@ -24,7 +25,9 @@ export default function ItemList({
   handleTogglePackedItem,
 }) {
   return (
-    <ul>
+    <ul className="item-list">
+      {items.length === 0 && <EmptyView />}
+
       {items.map((item) => (
         <Item
           key={item.id}
