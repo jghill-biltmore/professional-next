@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { LIST_ITEMS_INIT } from "./lib/constants";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 
 function Item({ item }) {
@@ -15,9 +13,7 @@ function Item({ item }) {
   );
 }
 
-export default function ItemList() {
-  const [items, setItems] = useState(LIST_ITEMS_INIT);
-
+export default function ItemList({ items }) {
   return (
     <ul>
       {items.map((item) => (
