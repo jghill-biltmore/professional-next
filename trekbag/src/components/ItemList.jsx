@@ -2,6 +2,7 @@ import { IoMdRemoveCircleOutline } from "react-icons/io";
 import EmptyView from "./EmptyView";
 import Select from "react-select";
 import { useMemo, useState } from "react";
+import { useItemsContext } from "./lib/hooks";
 
 function Item({ item, onDeleteItem, onTogglePackedItem }) {
   return (
@@ -27,12 +28,9 @@ const sortingOptions = [
   { label: "Sort by unpacked", value: "unpacked" },
 ];
 
-export default function ItemList({
-  items,
-  handleDeleteItem,
-  handleTogglePackedItem,
-}) {
+export default function ItemList() {
   const [sortBy, setSortBy] = useState("default");
+  const { items, handleDeleteItem, handleTogglePackedItem } = useItemsContext();
 
   const sortedItems = useMemo(
     () =>
