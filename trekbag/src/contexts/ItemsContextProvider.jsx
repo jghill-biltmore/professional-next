@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { LIST_ITEMS_INIT } from "../components/lib/constants";
+import { LIST_ITEMS_INIT } from "../lib/constants";
 
 export const ItemsContext = createContext();
 

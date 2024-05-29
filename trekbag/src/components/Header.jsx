@@ -1,6 +1,6 @@
 import Counter from "./Counter";
 import Logo from "./Logo";
-import { useItemsContext } from "./lib/hooks";
+import { useItemsContext } from "../lib/hooks";
 
 export default function Header() {
   const { items } = useItemsContext();

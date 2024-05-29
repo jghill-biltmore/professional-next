@@ -2,7 +2,7 @@ import { IoMdRemoveCircleOutline } from "react-icons/io";
 import EmptyView from "./EmptyView";
 import Select from "react-select";
 import { useMemo, useState } from "react";
-import { useItemsContext } from "./lib/hooks";
+import { useItemsContext } from "../lib/hooks";
 
 function Item({ item, onDeleteItem, onTogglePackedItem }) {
   return (

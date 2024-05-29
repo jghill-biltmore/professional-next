@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { useItemsContext } from "./lib/hooks";
+import { useItemsContext } from "../lib/hooks";
 
 export default function ButtonGroup() {
   const {
