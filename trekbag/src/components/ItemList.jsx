@@ -1,7 +1,7 @@
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 import EmptyView from "./EmptyView";
 import Select from "react-select";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 function Item({ item, onDeleteItem, onTogglePackedItem }) {
   return (
@@ -34,17 +34,21 @@ export default function ItemList({
 }) {
   const [sortBy, setSortBy] = useState("default");
 
-  const sortedItems = [...items].sort((a, b) => {
-    if (sortBy == "packed") {
-      return b.checked - a.checked;
-    }
+  const sortedItems = useMemo(
+    () =>
+      [...items].sort((a, b) => {
+        if (sortBy == "packed") {
+          return b.checked - a.checked;
+        }
 
-    if (sortBy == "unpacked") {
-      return a.checked - b.checked;
-    }
+        if (sortBy == "unpacked") {
+          return a.checked - b.checked;
+        }
 
-    return;
-  });
+        return;
+      }),
+    [items, sortBy]
+  );
 
   return (
     <ul className="item-list">
