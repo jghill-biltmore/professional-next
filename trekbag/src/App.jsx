@@ -6,8 +6,6 @@ import ItemList from "./components/ItemList";
 import Sidebar from "./components/Sidebar";
 import { LIST_ITEMS_INIT } from "./components/lib/constants";
 
-/* Test - can update */
-
 function App() {
   const [items, setItems] = useState(LIST_ITEMS_INIT);
 
